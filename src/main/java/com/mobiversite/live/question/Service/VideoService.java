@@ -21,17 +21,22 @@ public class VideoService {
 
     public Video sendVideoUrl(int tempValue){
         Video video = videoRepository.findByTempValue(tempValue);
-        if (video!=null && video.getTempValue() == 1) {
-            System.out.println("sendVideoURL 1. if");
+        if (video!=null){
             return video;
-        } else {
-            if (video.getTempValue() > 1 && video.getStatus().contentEquals("next")) {
-                System.out.println("2.if içerği");
-                return video;
-            }
-            System.out.println("sendVideoURL 1. else ");
-            return video;
+        }else {
+            return null;
         }
+//        if (video!=null && video.getTempValue() == 1) {
+//            System.out.println("sendVideoURL 1. if");
+//            return video;
+//        } else {
+//            if (video.getTempValue() > 1 && video.getStatus().contentEquals("next")) {
+//                System.out.println("2.if içerği");
+//                return video;
+//            }
+//            System.out.println("sendVideoURL 1. else ");
+//            return video;
+//        }
     }
 
     public void addVideo(String videoURL,int tempValue){

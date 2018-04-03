@@ -25,7 +25,7 @@ public class AnswerService {
         answerRepository.save(answer);
     }
     public int getAnswer(int questionId){
-        Answer answer = answerRepository.findByRightAnswer(questionId);
+        Answer answer = answerRepository.findByQuestionId(questionId);
         if (answer!=null){
             return (answer.getRightAnswer());
         }else {

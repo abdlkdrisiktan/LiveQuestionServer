@@ -6,4 +6,5 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 public  interface  AnswerRepository extends MongoRepository<Answer,String> {
 
     Answer findByRightAnswer(int rightAnswer);
+    Answer findByQuestionId(int rightAnswer);
 }
